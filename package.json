@@ -1,5 +1,5 @@
 {
-  "name": "random-starwars-names",
+  "name": "random-starwars-names-lib",
   "version": "0.0.0-development",
   "description": "Get random Star Wars names",
   "main": "src/index.js",
