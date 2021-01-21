@@ -10,7 +10,7 @@ describe("starwars-names", () => {
       expect(starwars.all).to.satisfy(isArrayOfStrings);
     });
 
-    it("should contain Luke Skywalker", () => {
+    it("should contain `Luke Skywalker`", () => {
       expect(starwars.all).to.include("Luke Skywalker");
     });
   });
