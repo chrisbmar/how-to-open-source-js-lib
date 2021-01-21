@@ -1,0 +1,32 @@
+{
+  "name": "random-starwars-names",
+  "version": "0.0.0-development",
+  "description": "Get random Star Wars names",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha src/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisbmar/how-to-open-source-js-lib.git"
+  },
+  "keywords": [
+    "random",
+    "star",
+    "wars"
+  ],
+  "author": "Chris Martin <chrisabmartin@gmail.com> (https://github.com/chrisbmar/how-to-open-source-js-lib)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisbmar/how-to-open-source-js-lib/issues"
+  },
+  "homepage": "https://github.com/chrisbmar/how-to-open-source-js-lib#readme",
+  "dependencies": {
+    "unique-random-array": "2.0.0"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "8.2.1",
+    "semantic-release": "^17.3.6"
+  }
+}
