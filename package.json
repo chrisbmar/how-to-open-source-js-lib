@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "cz": "git-cz",
-    "test": "mocha src/*.test.js",
+    "test": "mocha src/*.test.js --require @babel/register",
     "coverage": "nyc --reporter=lcov --reporter=text-summary npm run test",
     "prebuild": "rimraf dist",
     "build": "./node_modules/.bin/babel src --out-dir dist --copy-files && rimraf dist/**/*.test.js"
@@ -37,6 +37,7 @@
     "@babel/cli": "7.12.10",
     "@babel/core": "7.12.10",
     "@babel/preset-env": "7.12.11",
+    "@babel/register": "7.12.10",
     "chai": "4.2.0",
     "commitizen": "4.2.3",
     "cz-conventional-changelog": "3.3.0",
