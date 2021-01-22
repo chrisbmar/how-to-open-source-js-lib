@@ -1,4 +1,4 @@
-name: Codeclimate coverage test
+name: Codeclimate
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   coverage:
-    name: Test & publish code coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
