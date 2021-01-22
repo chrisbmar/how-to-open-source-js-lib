@@ -1,0 +1,23 @@
+name: Codeclimate
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: "12"
+      - run: npm ci
+      - run: npm run build --if-present
+      - uses: paambaati/codeclimate-action@v2.5.7
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: npm run coverage
