@@ -6,7 +6,7 @@
   "scripts": {
     "cz": "git-cz",
     "test": "mocha src/*.test.js",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc --reporter=lcov npm run test"
   },
   "repository": {
     "type": "git",
