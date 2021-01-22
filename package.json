@@ -2,11 +2,13 @@
   "name": "random-starwars-names-lib",
   "version": "0.0.0-development",
   "description": "Get random Star Wars names",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "cz": "git-cz",
-    "test": "mocha src/*.test.js",
-    "coverage": "nyc --reporter=lcov --reporter=text-summary npm run test"
+    "test": "mocha src/*.test.js --require @babel/register",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary npm run test",
+    "prebuild": "rimraf dist",
+    "build": "./node_modules/.bin/babel src --out-dir dist --copy-files && rimraf dist/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,10 @@
     "star",
     "wars"
   ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "author": "Chris Martin <chrisabmartin@gmail.com> (https://github.com/chrisbmar/how-to-open-source-js-lib)",
   "license": "MIT",
   "bugs": {
@@ -24,9 +30,14 @@
   },
   "homepage": "https://github.com/chrisbmar/how-to-open-source-js-lib#readme",
   "dependencies": {
+    "@babel/polyfill": "7.12.1",
     "unique-random-array": "2.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "7.12.10",
+    "@babel/core": "7.12.10",
+    "@babel/preset-env": "7.12.11",
+    "@babel/register": "7.12.10",
     "chai": "4.2.0",
     "commitizen": "4.2.3",
     "cz-conventional-changelog": "3.3.0",
@@ -34,6 +45,7 @@
     "lint-staged": "10.5.3",
     "mocha": "8.2.1",
     "nyc": "15.1.0",
+    "rimraf": "3.0.2",
     "semantic-release": "^17.3.6"
   },
   "config": {
@@ -49,5 +61,10 @@
       "pre-commit": "lint-staged",
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
