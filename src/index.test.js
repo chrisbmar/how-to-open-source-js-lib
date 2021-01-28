@@ -8,6 +8,7 @@ describe("starwars-names", () => {
         return array.every((item) => typeof item === "string");
       };
       expect(starwars.all).to.satisfy(isArrayOfStrings);
+      // console.log
     });
 
     it("should contain Luke Skywalker", () => {
