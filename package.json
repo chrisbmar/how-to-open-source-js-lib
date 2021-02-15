@@ -10,6 +10,9 @@
     "prebuild": "rimraf dist",
     "build": "./node_modules/.bin/babel src --out-dir dist --copy-files && rimraf dist/**/*.test.js"
   },
+  "release": {
+    "branches": ["master", { "name": "beta", "prerelease": true }]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/chrisbmar/how-to-open-source-js-lib.git"
