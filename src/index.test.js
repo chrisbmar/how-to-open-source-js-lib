@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import starwars from "./index";
 
+// random comment test
 describe("starwars-names", () => {
   describe("all", () => {
     it("should be an array of strings", () => {
